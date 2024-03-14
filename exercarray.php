@@ -4,7 +4,7 @@
 
 $numero = array();
 
-for(i = 1; i <= 10; i++){
+for($i = 1; $i <= 10; $i++){
     $num = readline("Digite um número: ");
     array_push($numero, $num);
 }
@@ -12,7 +12,7 @@ for(i = 1; i <= 10; i++){
 $soma = 0;
 
 foreach ($numero as $num) {
-    $soma += $soma
+    $soma += $soma;
 }
 
-$media = $num 
+$media = $num ;

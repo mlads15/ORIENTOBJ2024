@@ -1,0 +1,37 @@
+
+class Pessoa {
+
+    public $nome;
+    public $endereco;
+    public $cidade;
+    public $uf;
+    public $altura;
+
+    //acho que é assim..,?
+
+    function falarOla() {
+        echo "Olá Mundo, sou " . $this->nome . "!\n";
+    }
+
+    function falarEndereco() {
+        echo "Moro em " . $this->endereco . ", " . $this->cidade . "/" . $this->uf . "!\n";
+    }
+
+    function falarAltura () {
+        echo "Tenho " . $this->altura . " metros!\n";
+    }
+
+}
+
+//sinceramente, não sei como fazer de outra forma
+
+$pessoa = new Pessoa();
+$pessoa->nome = readline("Me informe o seu nome: ");
+$pessoa->endereco = readline("Informe o seu endereço residencial: \n");
+$pessoa->cidade = readline("Informe o nome da cidade em que mora: \n");
+$pessoa->uf = readline("Informe o estado em que vive: \n");
+$pessoa->altura = readline("Informe a sua altura em metros: \n");
+
+$pessoa->falarOla();
+$pessoa->falarEndereco();
+$pessoa->falarAltura();

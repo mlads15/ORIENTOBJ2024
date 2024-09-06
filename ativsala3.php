@@ -1,6 +1,6 @@
 <?php
 
-class Pessoa {
+/*class Pessoa {
 
     private $nome;
     private $sobrenome;
@@ -8,7 +8,8 @@ class Pessoa {
 
     //to string
     public function __toString() {
-        return
+        return sprintf("%s %s, %d anos\n",
+            $this->nome, $this->sobrenome, $this->idade);
     }
 
     public function getNome(){
@@ -46,6 +47,8 @@ class Pessoa {
 
 $opcao = 0;
 
+$pessoas = array();
+
 do {
 
  echo "\n-----------MENU-----------\n";
@@ -58,28 +61,49 @@ do {
 
  $opcao = readline("Escolha a opção: ");
 
- switch($opcao) {
+switch($opcao) {
 
- case 0:
-    echo "Programa encerrado!\n";
-    break;
- 
- case 1:
-    echo "\n";
-    $pessoa = new Pessoa ();
-    $pessoa->setNome(readline("Informe o nome da pessoa: "));
-    $pessoa->setSobrenome(readline("Informe o sobrenome da pessoa: "));
-    $pessoa->setIdade(readline("Informe a idade da pessoa: "));
-    break;
+    case 0:
+        echo "Programa encerrado!\n";
+        break;
+    
+    case 1:
+        echo "\n";
+        $pessoa = new Pessoa ();
+        $pessoa->setNome(readline("Informe o nome da pessoa: "));
+        $pessoa->setSobrenome(readline("Informe o sobrenome da pessoa: "));
+        $pessoa->setIdade(readline("Informe a idade da pessoa: "));
+        array_push($pessoas, $pessoa);
 
- case 2:
-    echo "Listando....\n";
-    break;
+    case 2:
+        if(count($pessoas) > 0) {
+            echo "\nPessoas cadastradas:\n";
+            foreach($pessoas as $p)
+                echo $p;
+        } else
+            echo "\nNão há pessoas cadastradas!\n";
+        
+        break;
 
- default:
-    echo "Opção INVÁLIDA!\n";
-}
+    case 3: 
+        echo "Pessoas disponíveis: ";
+        $i = 1;
+        foreach ($pessoas as $p) {
+            echo $i . ": " . $p . "\n";
+            $i++;
+        }
 
-} 
+    $idx = readline("Qual pessoa você gostaria de excluir? ");
+    $idx--;
 
-while($opcao != 0);
+    if ($idx >= 0 && < count($pessoas)) {
+        array_splice
+        
+    }
+    
+
+    default:
+        echo "Opção INVÁLIDA!\n";
+    }
+
+} while($opcao != 0); */
